@@ -1,5 +1,6 @@
 const previous = document.getElementById('previous');
-const playPause = document.getElementById('playpause');
+const play = document.querySelector('.play')
+const pause = document.querySelector('.pause');
 const next = document.getElementById('next');
 
 previous.addEventListener('click', function() {
@@ -10,19 +11,24 @@ next.addEventListener('click', function() {
     console.log('next button clicked');
 });
 
-playPause.addEventListener('click', function() {
-    if (playPause.classList.contains('active')) {
-        playPause.classList.toggle('active')
-        console.log('here');
-    }
+play.addEventListener('click', function() {
+        playTrack();
 });
 
-const play = () => {
+pause.addEventListener('click', function() {
+        pauseTrack();
+})
 
+const playTrack = () => {
+    play.classList.toggle('active');
+    pause.classList.toggle('active');
+    console.log('track playing');
 }
 
-const pause = () => {
-
+const pauseTrack = () => {
+    pause.classList.toggle('active');
+    play.classList.toggle('active');
+    console.log('track paused   ');
 }
 
 const nextTrack = () => {

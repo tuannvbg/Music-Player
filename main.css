@@ -104,24 +104,34 @@ body {
 }
 
 .control {
-    margin: 5px;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center; 
 }
 
 .icon {
-    width: 50px;
-    transition: .1s ease-in-out;
+    width: 35px;
+    transition: .05s ease-in-out;
 }
 
-.playpause {
-    width: 50px;
+.play {
+    width: 30px;
     transition: .1s ease-in-out;
     display: none;
 }
 
-.playpause:active {
+.pause { 
+  width: 30px;
+  transition: .3s ease-in-out;
+  display: none;
+}
+
+.play:active {
+    transform: scale(.95);
+}
+
+.pause:active {
     transform: scale(.95);
 }
 
