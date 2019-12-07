@@ -27,10 +27,14 @@ let song1 = new Song("/artwork/song1.jpg", "Miska", "Warm", new Audio("/songs/-.
 let song2 = new Song("/artwork/song2.jpg", "altitude", "lake.serene", new Audio("/songs/lake.serene.mp3"), false);
 let song3 = new Song("/artwork/song3.jpg","CYGN","remember", new Audio("/songs/R E M E M B E R.mp3"), false);
 let song4 = new Song( "/artwork/song4.jpg", "hisohkah", "school rooftop", new Audio("/songs/school rooftop.mp3"), false);
-let song5 = new Song( "/artwork/song5.jpg", "Soulstruck", "sundried", new Audio("/songs/sundried [w_ AiRLOCKE].mp3"), false);
+let song5 = new Song( "/artwork/song5.jpg", "sundried", "Soulstruck", new Audio("/songs/sundried [w_ AiRLOCKE].mp3"), false);
+let song6 = new Song( "/artwork/song6.jpg", "ShunGu", "Candeias_", new Audio("/songs/Candeias __ ShunGu.mp3"), false);
+let song7 = new Song( "/artwork/song7.jpg", "mieksneak", "Come Down", new Audio("/songs/Come Down.mp3"), false);
+let song8 = new Song( "/artwork/song8.jpg", "sugiwa", "in the way", new Audio("/songs/in the way ..mp3"), false);
+let song9 = new Song( "/artwork/song9.jpg", "oofoe", "soft breeze", new Audio("/songs/soft breeze.mp3"), false);
 
 /// Add songs to playlist array
-var playlist = [song1, song2, song3, song4, song5];
+var playlist = [song1, song2, song3, song4, song5, song6, song7, song8, song9];
 
 previous.addEventListener("click", function() {
   console.log("previous");
