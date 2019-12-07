@@ -155,3 +155,35 @@ const updateSongInfo = (songIndex) => {
     songTitle.innerHTML = playlist[songIndex].track;
     artwork.src = playlist[songIndex].artwork;
 }
+
+// const coverTransition = (songIndex) => {
+//     playlist[songIndex].artwork.style.animation('fadeout', '.2s', 'ease in out');
+// }
+
+// Timer for audio player
+// let timer;
+// let percent = 0;
+// var audio = playlist[songIndex].song;
+
+// audio.addEventListener('playing', function(_event) {
+//     var duration = _event.target.duration;
+//     advance(duration, audio)
+// });
+
+// audio.addEventListener('pause', function(_event) {
+//     clearTimeout(timer);
+// });
+
+// var advance = function(duration, element) {
+//     var bar = document.getElementById('progress-bar');
+//     increment = 10/duration;
+//     percent = Math.min(increment * element.currentTime * 10, 100);
+//     bar.style.width = percent+'%'
+//     startTimer(duration, element);
+// }
+
+// var startTimer = function(duration, element) {
+//     if (percent < 100) {
+//         timer = setTimeout(function(){advance(duration, element)}, 100)
+//     }
+// }
