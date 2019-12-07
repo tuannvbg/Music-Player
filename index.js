@@ -5,27 +5,29 @@ const next = document.getElementById("next");
 const like = document.querySelector(".like");
 const unlike = document.querySelector(".unlike");
 
+// HTML (track-information) elements to update
 var artistName = document.getElementById('artist');
 let songTitle = document.getElementById('track');
-let artwork = document.getElementById('artwork').src;
+let artwork = document.getElementById('cover');
 
 let favorites = []; // Array for favorites
 let songIndex = 0; // index to keep track of current song position in playlist
 
 // Song function constructor
-let Song = function(artwork, artist, track, song) {
+let Song = function(artwork, artist, track, song, liked) {
   this.artwork = artwork;
   this.artist = artist;
   this.track = track;
   this.song = song;
+  this.liked = liked;
 };
 
 // Initiate new songs
-let song1 = new Song("", "Miska", "Warm", new Audio("/songs/-.mp3"));
-let song2 = new Song("", "altitude", "lake.serene", new Audio("/songs/lake.serene.mp3"));
-let song3 = new Song("","CYGN","remember", new Audio("/songs/R E M E M B E R.mp3"));
-let song4 = new Song( "", "hisohkah", "school rooftop", new Audio("/songs/school rooftop.mp3"));
-let song5 = new Song( "", "Soulstruck", "sundried", new Audio("/songs/sundried [w_ AiRLOCKE].mp3"));
+let song1 = new Song("/artwork/song1.jpg", "Miska", "Warm", new Audio("/songs/-.mp3"), false);
+let song2 = new Song("/artwork/song2.jpg", "altitude", "lake.serene", new Audio("/songs/lake.serene.mp3"), false);
+let song3 = new Song("/artwork/song3.jpg","CYGN","remember", new Audio("/songs/R E M E M B E R.mp3"), false);
+let song4 = new Song( "/artwork/song4.jpg", "hisohkah", "school rooftop", new Audio("/songs/school rooftop.mp3"), false);
+let song5 = new Song( "/artwork/song5.jpg", "Soulstruck", "sundried", new Audio("/songs/sundried [w_ AiRLOCKE].mp3"), false);
 
 /// Add songs to playlist array
 var playlist = [song1, song2, song3, song4, song5];
@@ -131,12 +133,17 @@ const likeTrack = () => {
   like.classList.toggle("active");
   unlike.classList.toggle("active");
   console.log("song liked");
+  favorites.push(playlist[songIndex]);
+  playlist[songIndex].liked = true;
 };
 
 const unlikeTrack = () => {
   unlike.classList.toggle("active");
   like.classList.toggle("active");
   console.log("song unliked");
+  favorites.pop(playlist[songIndex]);
+  playlist[songIndex].liked = false;
+
 };
 
 const restartAudio = audio => {
@@ -146,4 +153,5 @@ const restartAudio = audio => {
 const updateSongInfo = (songIndex) => {
     artistName.innerHTML = playlist[songIndex].artist;
     songTitle.innerHTML = playlist[songIndex].track;
+    artwork.src = playlist[songIndex].artwork;
 }
